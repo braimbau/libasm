@@ -8,7 +8,7 @@ SRC			=	./srcs/ft_strlen.s	\
 				./srcs/ft_strcpy.s
 
 NA			=	nasm
-NA_FLAGS	=	-f macho64 -I./include/libasm.h
+NA_FLAGS	=	-f elf64
 
 OBJS		=	$(SRC:.s=.o)
 
