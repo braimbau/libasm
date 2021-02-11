@@ -12,6 +12,6 @@ error:
 		mov rdi, rax
 		call __errno_location
 		neg rdi
-		mov [rax], rdi
+		mov [rax],rdi
 		mov rax, -1
 		ret
