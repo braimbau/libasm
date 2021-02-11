@@ -1,14 +1,14 @@
 NAME        =    libasm.a
 
-SRC			=	./ft_strlen.s	\
-				./ft_read.s		\
-				./ft_write.s	\
-				./ft_strcmp.s	\
-				./ft_strdup.s	\
-				./ft_strcpy.s
+SRC			=	./srcs/ft_strlen.s	\
+				./srcs/ft_read.s		\
+				./srcs/ft_write.s	\
+				./srcs/ft_strcmp.s	\
+				./srcs/ft_strdup.s	\
+				./srcs/ft_strcpy.s
 
 NA			=	nasm
-NA_FLAGS	=	-f macho64
+NA_FLAGS	=	-f macho64 -I./include/libasm.h
 
 OBJS		=	$(SRC:.s=.o)
 
@@ -19,6 +19,7 @@ all:	$(NAME)
 
 ${NAME}:		${OBJS}
 	ar rcs ${NAME} ${OBJS}
+#	ranlib ${NAME}
 
 clean:    
 	${RM}	${OBJS}
