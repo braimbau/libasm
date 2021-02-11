@@ -8,18 +8,18 @@ SRC			=	./srcs/ft_strlen.s	\
 				./srcs/ft_strcpy.s
 
 NA			=	nasm
-NA_FLAGS	=	-f elf64
+NA_FLAGS	=	-f elf64 -I./include
 
 OBJS		=	$(SRC:.s=.o)
 
 all:	$(NAME)
 
-%.o :	%.s
-	$(NA) $(NA_FLAGS) -o $@ -s $<
+%.o:	%.s
+		${NA} ${NA_FLAGS} -o $@ -s $<
 
 ${NAME}:		${OBJS}
 	ar rcs ${NAME} ${OBJS}
-#	ranlib ${NAME}
+	ranlib ${NAME}
 
 clean:    
 	${RM}	${OBJS}
