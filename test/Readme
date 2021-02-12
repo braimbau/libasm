@@ -1,1 +1,0 @@
- gcc -o asm test/main.c ./libasm.a
