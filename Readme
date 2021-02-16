@@ -1,1 +1,1 @@
- gcc -o asm test/main.c ./libasm.a
+ clang -o asm test/main.c ./libasm.a
